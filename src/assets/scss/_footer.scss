@@ -12,13 +12,14 @@
   font-size: 1em;
   font-weight: 400;
   padding-top: 2em;
-  color: white;
+  color: #ccc;
   background: $ebony-clay;
   letter-spacing: 0.1em;
 }
 
 .sub-footer {
-  background: $mine-shaft;
+  background: white;
+  border-top: 1px solid #e7e7e7;
   padding: 1em 0;
   font-size: 1em;
   position: absolute;
@@ -49,7 +50,7 @@
 .email-box {
   height: 40px;
   width: 100%;
-  background: $mine-shaft;
+  background: #ccc;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   padding: 0.5em 0.5em;
@@ -96,18 +97,18 @@
   }
 }
 
-.imprint-row  {
+.imprint-row {
   padding: 0;
-    li {
-      list-style: none;
-      display: inline;
-      padding: 0 1em 0 0;
-    }
+  li {
+    list-style: none;
+    display: inline;
+    padding: 0 1em 0 0;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .footer-col {
-    border-right: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     height: 200px;
   }
 }

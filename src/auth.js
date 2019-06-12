@@ -18,11 +18,14 @@ try {
   console.error('Could not retrieve token from local storage', error);
 }
 
-const tokenProvider = new TokenProvider({
-  sdkAuth: new SdkAuth(config.ct.auth),
-  fetchTokenInfo: sdkAuth => sdkAuth.anonymousFlow(),
-  onTokenInfoChanged: tokenInfo => localStorage.setItem(tokenInfoStorageName, JSON.stringify(tokenInfo)),
-}, storedTokenInfo);
+const tokenProvider = new TokenProvider(
+  {
+    sdkAuth: new SdkAuth(config.ct.auth),
+    fetchTokenInfo: sdkAuth => sdkAuth.anonymousFlow(),
+    onTokenInfoChanged: tokenInfo => localStorage.setItem(tokenInfoStorageName, JSON.stringify(tokenInfo)),
+  },
+  storedTokenInfo,
+);
 
 function cleanUpSession() {
   localStorage.removeItem(isAuthenticatedStorageName);
@@ -32,8 +35,10 @@ function cleanUpSession() {
 export function clientLogin(username, password) {
   localStorage.removeItem(tokenInfoStorageName);
   tokenProvider.fetchTokenInfo = sdkAuth => sdkAuth.customerPasswordFlow({ username, password });
+  console.log('test', tokenProvider);
   tokenProvider.invalidateTokenInfo();
-  return apolloProvider.defaultClient.resetStore()
+  return apolloProvider.defaultClient
+    .resetStore()
     .then(() => {
       localStorage.setItem(isAuthenticatedStorageName, true);
       return store.dispatch('setAuthenticated', true);
@@ -54,7 +59,7 @@ export function clientLogout(redirect) {
       console.error('Error on cache reset during logout', error);
     });
 }
-
+// prettier-ignore
 const buildAuthorizationHeader = () => tokenProvider.getTokenInfo()
   .then(tokenInfo => `${tokenInfo.token_type} ${tokenInfo.access_token}`);
 

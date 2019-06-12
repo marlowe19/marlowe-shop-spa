@@ -5,15 +5,10 @@ const clientSecret = process.env.VUE_APP_CT_CLIENT_SECRET || 'QhgNoWJFjKjNSf3Z3M
 
 const authHost = process.env.VUE_APP_CT_AUTH_HOST || 'https://auth.commercetools.com';
 const apiHost = process.env.VUE_APP_CT_API_HOST || 'https://api.commercetools.com';
-
+console.log(projectKey, process.env.VUE_APP_CT_CLIENT_ID, process.env.VUE_APP_CT_CLIENT_SECRET);
 function scopes() {
-  return ['create_anonymous_token',
-    'view_products',
-    'manage_my_orders',
-    'manage_my_payments',
-    'manage_my_profile',
-    'manage_my_shopping_lists']
-    .map(scope => `${scope}:${projectKey}`);
+  return ['manage_project',
+  ].map(scope => `${scope}:${projectKey}`);
 }
 
 export default {

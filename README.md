@@ -1,7 +1,7 @@
 # SUNRISE as a Single-Page Application
 
 [![CircleCI](https://circleci.com/gh/commercetools/sunrise-spa.svg?style=svg)](https://circleci.com/gh/commercetools/sunrise-spa)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/40ae8067-e59d-4c71-a232-8f0b222bc291/deploy-status)](https://app.netlify.com/sites/sunrise/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2321d613-0a41-4222-ae69-80693af94a5d/deploy-status)](https://app.netlify.com/sites/vigilant-galileo-a85121/deploys)
 
 ## Demo
 https://sunrise.netlify.com/

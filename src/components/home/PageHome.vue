@@ -7,7 +7,7 @@
       <!--{{> catalog/home/home-suggestions}}-->
 
       <div class="home-viewall">
-        Home page
+  Product list
         <!--{{> catalog/home/view-products-link}}-->
       </div>
     </div>
